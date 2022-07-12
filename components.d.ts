@@ -19,6 +19,7 @@ declare module '@vue/runtime-core' {
     ElRadio: typeof import('element-plus/es')['ElRadio']
     ElRadioGroup: typeof import('element-plus/es')['ElRadioGroup']
     IWeddingSwimsuit: typeof import('~icons/wedding/swimsuit')['default']
+    IWeddingSwimsuit_pants: typeof import('~icons/wedding/swimsuit_pants')['default']
     MainHeader: typeof import('./src/components/MainHeader.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

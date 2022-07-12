@@ -26,18 +26,16 @@
       </p>
 
       <div class="dress-code-section__footer">
-      <el-icon :size="70">
-        <i-wedding-swimsuit></i-wedding-swimsuit>
-      </el-icon>
+        <el-icon :size="200">
+          <i-wedding-swimsuit></i-wedding-swimsuit>
+        </el-icon>
+        <el-icon :size="200">
+          <i-wedding-swimsuit_pants></i-wedding-swimsuit_pants>
+        </el-icon>
       </div>
     </div>
   </section>
 </template>
-
-//
-<script lang="ts">
-// import swimsuit from "@/assets/img/icons/swimsuit.svg";
-</script>
 
 <style scoped lang="sass">
 .dress-code-section
@@ -85,4 +83,7 @@
     background-color: $color-5
   &.color-6
     background-color: $color-6
+
+.dress-code-section__footer
+  margin-top: 50px
 </style>

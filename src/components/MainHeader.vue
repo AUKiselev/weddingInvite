@@ -1,5 +1,8 @@
 <template>
   <div class="main-header__wrapper">
+    <p class="main-header__logo" @click="$router.push({ name: 'mainView' })">
+      Максим и Зоя
+    </p>
     <el-menu
       class="main-header__menu"
       mode="horizontal"
@@ -45,8 +48,22 @@ const activePath = () => {
 
 <style scoped lang="sass">
 .main-header__wrapper
+  position: relative
   height: 80px
-  // opacity: 0.7
+
+.main-header__logo
+  position: absolute
+  top: 25px
+  left: 20px
+  z-index: 5
+  cursor: pointer
+
+  font-family: 'Exo2'
+  line-height: 30px
+  color: $white
+
+  &:hover
+    border-bottom: 4px solid $white
 
 .el-menu
   padding: 0 30px 0 30px

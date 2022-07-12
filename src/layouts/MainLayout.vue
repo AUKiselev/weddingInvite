@@ -17,7 +17,7 @@ import MainHeader from "@/components/MainHeader.vue";
 
 <style scoped lang="sass">
 .main-container
-  background: $main-bg-color url(@/assets/img/main-page-bg.jpg) no-repeat fixed top
+  background: $main-bg-color url(@/assets/img/dress-code-bg.jpg) no-repeat fixed top
   background-size: 100%
 
 .main-header__container
