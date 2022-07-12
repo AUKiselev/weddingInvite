@@ -26,7 +26,9 @@
       </p>
 
       <div class="dress-code-section__footer">
+      <el-icon :size="70">
         <i-wedding-swimsuit></i-wedding-swimsuit>
+      </el-icon>
       </div>
     </div>
   </section>
