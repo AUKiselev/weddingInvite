@@ -12,12 +12,6 @@
         </template>
       </el-menu-item>
 
-      <el-menu-item index="/about">
-        <template #title>
-          <span>О нас</span>
-        </template>
-      </el-menu-item>
-
       <el-menu-item index="/contacts">
         <template #title>
           <span>Церемония</span>
@@ -26,7 +20,7 @@
 
       <el-menu-item index="/dress-code">
         <template #title>
-          <span>Дресс код</span>
+          <span>Дресс-код</span>
         </template>
       </el-menu-item>
 
@@ -52,16 +46,17 @@ const activePath = () => {
 <style scoped lang="sass">
 .main-header__wrapper
   height: 80px
-  opacity: 0.7
+  // opacity: 0.7
 
 .el-menu
+  padding: 0 30px 0 30px
   justify-content: end
   height: 80px
   background-color: $main-elements-color
 
 .el-menu-item
   color: $white
-  font-family: 'exo2'
+  font-family: 'Exo2'
   font-size: $fz20
   font-weight: 800
 

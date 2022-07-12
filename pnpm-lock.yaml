@@ -1,6 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@fawmi/vue-google-maps': ^0.9.72
   '@iconify-json/ic': ^1.1.7
   '@rushstack/eslint-patch': ^1.1.4
   '@types/node': ^18.0.3
@@ -23,6 +24,7 @@ specifiers:
   vue-tsc: ^0.38.3
 
 dependencies:
+  '@fawmi/vue-google-maps': 0.9.72
   element-plus: 2.2.9_vue@3.2.37
   pinia: 2.0.14_typescript@4.7.4+vue@3.2.37
   vue: 3.2.37
@@ -94,6 +96,12 @@ packages:
       - supports-color
     dev: true
 
+  /@fawmi/vue-google-maps/0.9.72:
+    resolution: {integrity: sha512-/eoaV6rvE+eCn0g+OaP9VV2KL19vi2M9I2HL62gDnFdQJ7PYFJliOG6gCeojmX1dYpRWQzEzjhcT5ZzMBkd3Qw==}
+    dependencies:
+      '@googlemaps/markerclustererplus': 1.2.10
+    dev: false
+
   /@floating-ui/core/0.7.3:
     resolution: {integrity: sha512-buc8BXHmG9l82+OQXOFU3Kr2XQx9ys01U/Q9HMIrZ300iLc8HLMgh7dcCqgYzAzf4BkoQvDcXf5Y+CuEZ5JBYg==}
     dev: false
@@ -102,6 +110,11 @@ packages:
     resolution: {integrity: sha512-419BMceRLq0RrmTSDxn8hf9R3VCJv2K9PUfugh5JyEFmdjzDo+e8U5EdR8nzKq8Yj1htzLm3b6eQEEam3/rrtg==}
     dependencies:
       '@floating-ui/core': 0.7.3
+    dev: false
+
+  /@googlemaps/markerclustererplus/1.2.10:
+    resolution: {integrity: sha512-HY4ev+D3kO1+9oQjtKTojxVtJIS/kSWJfry6cpKoXC97kBQc5Vguqu5x6pLnh+70N0Au+16Yl7iu4LZaIOTstw==}
+    deprecated: It is recommended to use @googlemaps/markerclusterer instead of this package.
     dev: false
 
   /@humanwhocodes/config-array/0.9.5:
