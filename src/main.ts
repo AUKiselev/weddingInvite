@@ -8,6 +8,8 @@ import "@/assets/css/styles.sass";
 import ElementPlus from "element-plus";
 import "element-plus/dist/index.css";
 import ru from "element-plus/es/locale/lang/ru";
+import OpenLayersMap from "vue3-openlayers";
+import "vue3-openlayers/dist/vue3-openlayers.css";
 
 const app = createApp(App);
 
@@ -16,5 +18,6 @@ app.use(router);
 app.use(ElementPlus, {
   locate: ru,
 });
+app.use(OpenLayersMap);
 
 app.mount("#app");

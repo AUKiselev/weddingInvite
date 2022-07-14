@@ -1,5 +1,5 @@
 <template>
-  <el-container class="main-container">
+  <el-container class="main-container" :class="currentPage">
     <el-header class="main-header__container" height="80px">
       <MainHeader />
     </el-header>
@@ -13,11 +13,25 @@
 
 <script setup lang="ts">
 import MainHeader from "@/components/MainHeader.vue";
+import { useUiStore } from "@/stores/uiStore";
+import { storeToRefs } from "pinia";
+
+const uiStore = useUiStore();
+const { currentPage } = storeToRefs(uiStore);
 </script>
 
 <style scoped lang="sass">
-.main-container
+.main-page
+  background: $main-bg-color url(@/assets/img/main-page-bg.jpg) no-repeat fixed top
+  background-size: 100%
+.contacts
+  background: $main-bg-color url(@/assets/img/contacts-bg.jpg) no-repeat fixed top
+  background-size: 100%
+.dress-code
   background: $main-bg-color url(@/assets/img/dress-code-bg.jpg) no-repeat fixed top
+  background-size: 100%
+.gallery
+  background: $main-bg-color url(@/assets/img/gallery-bg.jpg) no-repeat fixed top
   background-size: 100%
 
 .main-header__container

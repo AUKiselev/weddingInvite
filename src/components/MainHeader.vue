@@ -65,6 +65,8 @@ const activePath = () => {
   &:hover
     border-bottom: 4px solid $white
 
+.main-header__menu
+  border: none
 .el-menu
   padding: 0 30px 0 30px
   justify-content: end
@@ -77,7 +79,7 @@ const activePath = () => {
   font-size: $fz20
   font-weight: 800
 
-  &:hover
+  &:hover, &:focus
     color: $white !important
     background-color: $main-elements-hover-color !important
 

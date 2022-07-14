@@ -56,12 +56,19 @@
 </template>
 
 <script setup lang="ts">
-import { computed, reactive } from "vue";
+import { computed, reactive, onMounted } from "vue";
 import { useUserStore } from "@/stores/user";
+import { useUiStore } from "@/stores/uiStore";
 import { storeToRefs } from "pinia";
 
 const userStore = useUserStore();
 const { user } = storeToRefs(userStore);
+
+const uiStore = useUiStore();
+
+onMounted(() => {
+  uiStore.setCurrentPage("main-page");
+});
 
 const moreThanOneGuest = computed(() => {
   return user.value.username.split(" ")[1] == "и";

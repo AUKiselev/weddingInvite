@@ -14,10 +14,12 @@
     "element-plus": "^2.2.9",
     "pinia": "^2.0.14",
     "vue": "^3.2.37",
-    "vue-router": "^4.1.1"
+    "vue-router": "^4.1.1",
+    "vue3-openlayers": "^0.1.68"
   },
   "devDependencies": {
     "@iconify-json/ic": "^1.1.7",
+    "@iconify-json/map": "^1.1.2",
     "@rushstack/eslint-patch": "^1.1.4",
     "@types/node": "^18.0.3",
     "@vitejs/plugin-vue": "^2.3.3",
