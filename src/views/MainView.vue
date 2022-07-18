@@ -1,10 +1,10 @@
 <template>
-  <section class="main-page-section">
+  <section class="main-page-section view-section">
     <p class="headline-1" v-if="moreThanOneGuest">
       Дорогие {{ user.username }}!
     </p>
     <p class="headline-1" v-else>Дорогой {{ user.username }}!</p>
-    <p class="main-page-section__content">
+    <p class="main-page-section__content view-section__content">
       В нашей жизни есть счастливые и радостные моменты, которые хочется
       разделить с дорогими людьми. Ваша поддержка, понимание, любовь и дружба
       всегда были важны для нас. Поэтому мы приглашаем вас открыть вместе с нами
@@ -15,9 +15,9 @@
     </p>
   </section>
 
-  <section class="main-page-section">
+  <section class="main-page-section view-section">
     <p class="headline-1">Подарки</p>
-    <p class="main-page-section__content">
+    <p class="main-page-section__content view-section__content">
       Мы поощряем ваше творчество, поэтому будем рады вашему творческому подходу
       к поздравлению. Но мы будем также признательны, если вы поможете нам
       осуществить мечту о путешествии, подарив ваши пожелания в конверте.
@@ -29,7 +29,7 @@
     </p>
   </section>
 
-  <section class="main-page__invite-form-block main-page-section">
+  <section class="main-page__invite-form-block main-page-section view-section">
     <p class="headline-1">Подтвердите присутствие</p>
     <el-form :model="submitForm">
       <div class="invite-form-block__choice">
@@ -81,31 +81,26 @@ const submitForm = reactive({
 </script>
 
 <style lang="sass">
-.main-page-section
-  display: flex
-  flex-direction: column
-  align-items: center
-
-  font-weight: 400
-  font-style: italic
-
-  & + *
-    margin-top: 90px
-
 .main-page-section__content
-  display: flex
   flex-direction: column
-  text-align: center
   max-width: 900px
-
-  font-size: $fz36
 
 .el-form
   min-width: 900px
 
+  @media (max-width: 768px)
+    min-width: 100%
+    width: 100%
+
 .invite-form-block__choice
   display: flex
-  justify-content: space-between
+  flex-direction: column
+  row-gap: 30px
+
+  @media (max-width: 768px)
+    margin: 0 0 0 50%
+    transform: translate(-50%)
+    align-items: start
 
 .el-form-item__content
   justify-content: space-around
@@ -113,8 +108,12 @@ const submitForm = reactive({
 .el-radio-group
   column-gap: 20px
 
+  @media (max-width: 768px)
+    flex-direction: column
+    align-items: start
+
 .el-radio__label
-  font-size: $fz18
+  font-size: $fz24
   color: $additional-element-color
 
 .el-radio__input.is-checked+.el-radio__label

@@ -8,6 +8,7 @@
       mode="horizontal"
       :default-active="activePath()"
       :router="true"
+      :ellipsis="false"
     >
       <el-menu-item index="/">
         <template #title>
@@ -62,16 +63,25 @@ const activePath = () => {
   line-height: 30px
   color: $white
 
+  @media (max-width: 768px)
+    display: none
+
   &:hover
     border-bottom: 4px solid $white
 
 .main-header__menu
   border: none
 .el-menu
-  padding: 0 30px 0 30px
+  padding: 0 30px
   justify-content: end
   height: 80px
   background-color: $main-elements-color
+
+  @media (max-width: 768px)
+    padding: 0
+    width: 100%
+    justify-content: center
+    height: 60px
 
 .el-menu-item
   color: $white
@@ -90,4 +100,7 @@ const activePath = () => {
 
     &:hover
       cursor: default
+
+  @media (max-width: 768px)
+    padding: 10px
 </style>

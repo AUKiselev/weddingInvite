@@ -21,9 +21,14 @@ const { currentPage } = storeToRefs(uiStore);
 </script>
 
 <style scoped lang="sass">
+.main-container
+  width: 100%
 .main-page
   background: $main-bg-color url(@/assets/img/main-page-bg.jpg) no-repeat fixed top
   background-size: 100%
+
+  @media (max-width: 768px)
+    background: $main-bg-color url(@/assets/img/main-page-phone-bg.jpg) no-repeat fixed top
 .contacts
   background: $main-bg-color url(@/assets/img/contacts-bg.jpg) no-repeat fixed top
   background-size: 100%
@@ -38,10 +43,17 @@ const { currentPage } = storeToRefs(uiStore);
   padding: 0
 
 .main-content__container
+  width: 100%
   padding: 70px
+
+  @media (max-width: 768px)
+    padding: 20px
 
 .main-content__wrapper
   padding: 40px 0
   color: $additional-element-color
   background-color: rgba(0, 0, 0, 0.5)
+
+  @media (max-width: 768px)
+    padding: 20px
 </style>

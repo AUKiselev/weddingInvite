@@ -1,7 +1,7 @@
 <template>
-  <section class="contacts-section">
+  <section class="contacts-section view-section">
     <p class="headline-1">План мероприятия</p>
-    <section class="contacts-section__content">
+    <section class="contacts-section__content view-section__content">
       <ol-map
         class="contacts-section__map"
         :loadTilesWhileAnimating="true"
@@ -108,19 +108,10 @@ const projection = ref("EPSG:4326");
 </script>
 
 <style scoped lang="sass">
-.contacts-section
-  display: flex
-  flex-direction: column
-  align-items: center
-
 .contacts-section__content
   padding: 0 20px
-  display: flex
-  text-align: center
   justify-content: space-between
   width: 100%
-
-  font-size: $fz36
 
 .contacts-section__map
   min-height: 550px

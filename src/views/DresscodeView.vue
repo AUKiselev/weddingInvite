@@ -1,7 +1,7 @@
 <template>
-  <section class="dress-code-section">
+  <section class="dress-code-section view-section">
     <p class="headline-1">Дресс-код</p>
-    <div class="dress-code-section__content">
+    <div class="dress-code-section__content view-section__content">
       <p class="dress-code-section__text">
         Мы очень ждем и с удовольствием готовимся к нашему незабываемому дню!
         Поддержите нас вашими улыбками и объятиями, а также красивыми нарядами в
@@ -73,24 +73,9 @@ onMounted(() => {
 </script>
 
 <style scoped lang="sass">
-.dress-code-section
-  display: flex
-  flex-direction: column
-  align-items: center
-
-  font-weight: 400
-  font-style: italic
-
-  & + *
-    margin-top: 90px
-
 .dress-code-section__content
-  display: flex
   flex-direction: column
-  text-align: center
   max-width: 900px
-
-  font-size: $fz36
 
 .dress-code-section__text
   display: flex
@@ -106,7 +91,6 @@ onMounted(() => {
 .palette-color
   height: 80px
   width: 80px
-  // border-radius: 50%
 
   &.color-1
     color: $border-color
