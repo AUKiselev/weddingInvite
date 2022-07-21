@@ -1,9 +1,6 @@
 <template>
   <section class="main-page-section view-section">
-    <p class="headline-1" v-if="moreThanOneGuest">
-      Дорогие {{ user.username }}!
-    </p>
-    <p class="headline-1" v-else>Дорогой {{ user.username }}!</p>
+    <p class="headline-1">{{ startOfHeading }}!</p>
     <p class="main-page-section__content view-section__content">
       В нашей жизни есть счастливые и радостные моменты, которые хочется
       разделить с дорогими людьми. Ваша поддержка, понимание, любовь и дружба
@@ -56,22 +53,20 @@
 </template>
 
 <script setup lang="ts">
-import { computed, reactive, onMounted } from "vue";
-import { useUserStore } from "@/stores/user";
+import { reactive, onMounted, computed } from "vue";
 import { useUiStore } from "@/stores/uiStore";
-import { storeToRefs } from "pinia";
-
-const userStore = useUserStore();
-const { user } = storeToRefs(userStore);
+import { useUserStore } from "@/stores/user";
 
 const uiStore = useUiStore();
 
-onMounted(() => {
-  uiStore.setCurrentPage("main-page");
+const userStore = useUserStore();
+
+const startOfHeading = computed(() => {
+  return userStore.usersList[userStore.currentUser];
 });
 
-const moreThanOneGuest = computed(() => {
-  return user.value.username.split(" ")[1] == "и";
+onMounted(() => {
+  uiStore.setCurrentPage("main-page");
 });
 
 const submitForm = reactive({

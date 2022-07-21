@@ -12,9 +12,17 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted } from "vue";
 import MainHeader from "@/components/MainHeader.vue";
 import { useUiStore } from "@/stores/uiStore";
+import { useUserStore } from "@/stores/user";
 import { storeToRefs } from "pinia";
+
+const userStore = useUserStore();
+const { getCurrentUser } = userStore;
+onMounted(() => {
+  getCurrentUser();
+});
 
 const uiStore = useUiStore();
 const { currentPage } = storeToRefs(uiStore);

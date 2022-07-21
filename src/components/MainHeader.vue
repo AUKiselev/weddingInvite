@@ -10,25 +10,37 @@
       :router="true"
       :ellipsis="false"
     >
-      <el-menu-item index="/">
+      <el-menu-item
+        index="/"
+        :route="{ name: 'mainView', id: userStore.currentUser }"
+      >
         <template #title>
           <span>Главная</span>
         </template>
       </el-menu-item>
 
-      <el-menu-item index="/contacts">
+      <el-menu-item
+        index="/contacts"
+        :route="{ name: 'contacts', id: userStore.currentUser }"
+      >
         <template #title>
           <span>Церемония</span>
         </template>
       </el-menu-item>
 
-      <el-menu-item index="/dress-code">
+      <el-menu-item
+        index="/dress-code"
+        :route="{ name: 'dress-code', id: userStore.currentUser }"
+      >
         <template #title>
           <span>Дресс-код</span>
         </template>
       </el-menu-item>
 
-      <el-menu-item index="/gallery">
+      <el-menu-item
+        index="/gallery"
+        :route="{ name: 'gallery', id: userStore.currentUser }"
+      >
         <template #title>
           <span>Фотокнига</span>
         </template>
@@ -39,6 +51,9 @@
 
 <script setup lang="ts">
 import { useRoute } from "vue-router";
+import { useUserStore } from "@/stores/user";
+
+const userStore = useUserStore();
 
 const route = useRoute();
 
