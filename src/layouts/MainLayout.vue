@@ -19,9 +19,8 @@ import { useUserStore } from "@/stores/user";
 import { storeToRefs } from "pinia";
 
 const userStore = useUserStore();
-const { getCurrentUser } = userStore;
 onMounted(() => {
-  getCurrentUser();
+  userStore.setCurrentUser();
 });
 
 const uiStore = useUiStore();

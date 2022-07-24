@@ -11,11 +11,13 @@
   },
   "dependencies": {
     "@fawmi/vue-google-maps": "^0.9.72",
+    "@types/leaflet": "^1.7.11",
+    "@vue-leaflet/vue-leaflet": "^0.6.1",
     "element-plus": "^2.2.9",
+    "leaflet": "^1.8.0",
     "pinia": "^2.0.14",
     "vue": "^3.2.37",
-    "vue-router": "^4.1.1",
-    "vue3-openlayers": "^0.1.68"
+    "vue-router": "^4.1.1"
   },
   "devDependencies": {
     "@iconify-json/ic": "^1.1.7",

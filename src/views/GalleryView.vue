@@ -1,3 +1,6 @@
+<template>
+  <span></span>
+</template>
 <script setup lang="ts">
 import { onMounted } from "vue";
 import { useUiStore } from "@/stores/uiStore";

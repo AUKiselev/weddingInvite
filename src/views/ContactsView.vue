@@ -2,38 +2,22 @@
   <section class="contacts-section view-section">
     <p class="headline-1">План мероприятия</p>
     <section class="contacts-section__content view-section__content">
-      <ol-map
-        class="contacts-section__map"
-        :loadTilesWhileAnimating="true"
-        :loadTilesWhileInteracting="true"
-      >
-        <ol-view
-          ref="view"
-          :center="center"
-          :zoom="zoom"
-          :projection="projection"
-        />
+      <div style="height: 60vh; width: 50vw">
+        <l-map v-model="zoom" v-model:zoom="zoom" :center="CENTER_COORDS">
+          <l-tile-layer
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          ></l-tile-layer>
+          <l-control-layers />
 
-        <ol-overlay :position="MARRIAGE_REGISTRY_COORDS">
-          <div class="overlay__marriage-registry">
-            <el-icon :size="36">
-              <i-wedding-map-marker></i-wedding-map-marker>
-            </el-icon>
-          </div>
-        </ol-overlay>
+          <l-marker :lat-lng="MARRIAGE_REGISTRY_COORDS">
+            <l-popup> ЗАГС </l-popup>
+          </l-marker>
 
-        <ol-overlay :position="EVENT_HOUSE_COORDS">
-          <div class="overlay__event-house">
-            <el-icon :size="36">
-              <i-wedding-map-marker></i-wedding-map-marker>
-            </el-icon>
-          </div>
-        </ol-overlay>
-
-        <ol-tile-layer>
-          <ol-source-osm />
-        </ol-tile-layer>
-      </ol-map>
+          <l-marker :lat-lng="EVENT_HOUSE_COORDS">
+            <l-popup> EVENT HOUSE </l-popup>
+          </l-marker>
+        </l-map>
+      </div>
 
       <div class="contacts-section__text">
         <div class="contacts-section__text-section">
@@ -88,23 +72,27 @@
 import { ref, onMounted } from "vue";
 import { useUiStore } from "@/stores/uiStore";
 
+import "leaflet/dist/leaflet.css";
+import {
+  LMap,
+  LMarker,
+  LPopup,
+  LControlLayers,
+  LTileLayer,
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+} from "@vue-leaflet/vue-leaflet";
+
 const uiStore = useUiStore();
 
 onMounted(() => {
   uiStore.setCurrentPage("contacts");
 });
 
-const MARRIAGE_REGISTRY_COORDS: [number, number] = [
-  82.91796291705104, 55.04158211411867,
-];
-const EVENT_HOUSE_COORDS: [number, number] = [
-  82.99700045320589, 54.9418338964205,
-];
-const CENTER_COORDS: [number, number] = [82.96590992891586, 54.97615294416755];
-
-const center = ref(CENTER_COORDS);
 const zoom = ref(12);
-const projection = ref("EPSG:4326");
+const MARRIAGE_REGISTRY_COORDS: [number, number] = [55.0415773, 82.9180487];
+const EVENT_HOUSE_COORDS: [number, number] = [54.9417913, 82.9967685];
+const CENTER_COORDS: [number, number] = [54.9823, 82.9471];
 </script>
 
 <style scoped lang="sass">

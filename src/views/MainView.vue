@@ -1,6 +1,6 @@
 <template>
   <section class="main-page-section view-section">
-    <p class="headline-1">{{ startOfHeading }}!</p>
+    <p class="headline-1">{{ userName }}!</p>
     <p class="main-page-section__content view-section__content">
       В нашей жизни есть счастливые и радостные моменты, которые хочется
       разделить с дорогими людьми. Ваша поддержка, понимание, любовь и дружба
@@ -56,17 +56,17 @@
 import { reactive, onMounted, computed } from "vue";
 import { useUiStore } from "@/stores/uiStore";
 import { useUserStore } from "@/stores/user";
+import { storeToRefs } from "pinia";
 
 const uiStore = useUiStore();
 
 const userStore = useUserStore();
 
-const startOfHeading = computed(() => {
-  return userStore.usersList[userStore.currentUser];
-});
+const { userName } = storeToRefs(userStore)
 
 onMounted(() => {
   uiStore.setCurrentPage("main-page");
+  userStore.setCurrentUser();
 });
 
 const submitForm = reactive({

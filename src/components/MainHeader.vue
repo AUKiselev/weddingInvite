@@ -37,14 +37,14 @@
         </template>
       </el-menu-item>
 
-      <el-menu-item
+      <!-- <el-menu-item
         index="/gallery"
         :route="{ name: 'gallery', id: userStore.currentUser }"
       >
         <template #title>
           <span>Фотокнига</span>
         </template>
-      </el-menu-item>
+      </el-menu-item> -->
     </el-menu>
   </div>
 </template>
