@@ -46,6 +46,6 @@ export const useUserStore = defineStore({
     setCurrentUser() {
       const route = useRoute();
       this.currentUser = route.params.user as string;
-    }
+    },
   },
 });

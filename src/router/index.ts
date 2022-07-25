@@ -4,27 +4,27 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: "/:user(\\w+)",
+      path: "/:user(\\w)?",
       name: "mainLayout",
       component: () => import("@/layouts/MainLayout.vue"),
       children: [
         {
-          path: "/:user(\\w+)",
+          path: "/:user(\\w)?",
           name: "mainView",
           component: () => import("@/views/MainView.vue"),
         },
         {
-          path: "/:user(\\w+)/contacts",
+          path: "/contacts/:user(\\w)?",
           name: "contacts",
           component: () => import("@/views/ContactsView.vue"),
         },
         {
-          path: "/:user(\\w+)/dress-code",
+          path: "/dress-code/:user(\\w)?",
           name: "dress-code",
           component: () => import("@/views/DresscodeView.vue"),
         },
         {
-          path: "/:user(\\w+)/gallery",
+          path: "/gallery/:user(\\w)?",
           name: "gallery",
           component: () => import("@/views/GalleryView.vue"),
         },

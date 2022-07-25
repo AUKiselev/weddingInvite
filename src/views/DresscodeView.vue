@@ -10,32 +10,32 @@
 
       <div class="dress-code-section__palette">
         <div class="palette-color color-1">
-          <el-icon :size="80">
+          <el-icon class="palette__icon-wrapper">
             <i-wedding-heart></i-wedding-heart>
           </el-icon>
         </div>
         <div class="palette-color color-2">
-          <el-icon :size="80">
+          <el-icon class="palette__icon-wrapper">
             <i-wedding-heart></i-wedding-heart>
           </el-icon>
         </div>
         <div class="palette-color color-3">
-          <el-icon :size="80">
+          <el-icon class="palette__icon-wrapper">
             <i-wedding-heart></i-wedding-heart>
           </el-icon>
         </div>
         <div class="palette-color color-4">
-          <el-icon :size="80">
+          <el-icon class="palette__icon-wrapper">
             <i-wedding-heart></i-wedding-heart>
           </el-icon>
         </div>
         <div class="palette-color color-5">
-          <el-icon :size="80">
+          <el-icon class="palette__icon-wrapper">
             <i-wedding-heart></i-wedding-heart>
           </el-icon>
         </div>
         <div class="palette-color color-6">
-          <el-icon :size="80">
+          <el-icon class="palette__icon-wrapper">
             <i-wedding-heart></i-wedding-heart>
           </el-icon>
         </div>
@@ -50,10 +50,10 @@
       </p>
 
       <div class="dress-code-section__footer">
-        <el-icon :size="200">
+        <el-icon class="wedding-icon__wrapper">
           <i-wedding-swimsuit></i-wedding-swimsuit>
         </el-icon>
-        <el-icon :size="200">
+        <el-icon class="wedding-icon__wrapper">
           <i-wedding-swimsuit_pants></i-wedding-swimsuit_pants>
         </el-icon>
       </div>
@@ -77,6 +77,10 @@ onMounted(() => {
   flex-direction: column
   max-width: 900px
 
+  @media (max-width: 768px)
+    min-width: 100%
+    width: 100%
+
 .dress-code-section__text
   display: flex
   flex-direction: column
@@ -87,6 +91,12 @@ onMounted(() => {
   margin: 60px 100px
   display: flex
   justify-content: space-around
+
+.palette__icon-wrapper
+  font-size: 80px
+
+  @media (max-width: 768px)
+    font-size: 50px
 
 .palette-color
   height: 80px
@@ -107,4 +117,10 @@ onMounted(() => {
 
 .dress-code-section__footer
   margin-top: 50px
+
+.wedding-icon__wrapper
+  font-size: 200px
+
+  @media (max-width: 768px)
+    font-size: 100px
 </style>

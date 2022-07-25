@@ -12,7 +12,7 @@
     >
       <el-menu-item
         index="/"
-        :route="{ name: 'mainView', id: userStore.currentUser }"
+        :route="{ name: 'mainView', id: userStore.currentUser && null }"
       >
         <template #title>
           <span>Главная</span>
@@ -21,7 +21,7 @@
 
       <el-menu-item
         index="/contacts"
-        :route="{ name: 'contacts', id: userStore.currentUser }"
+        :route="{ name: 'contacts', id: userStore.currentUser && null }"
       >
         <template #title>
           <span>Церемония</span>
@@ -30,7 +30,7 @@
 
       <el-menu-item
         index="/dress-code"
-        :route="{ name: 'dress-code', id: userStore.currentUser }"
+        :route="{ name: 'dress-code', id: userStore.currentUser && null }"
       >
         <template #title>
           <span>Дресс-код</span>

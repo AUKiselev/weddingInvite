@@ -53,7 +53,7 @@
 </template>
 
 <script setup lang="ts">
-import { reactive, onMounted, computed } from "vue";
+import { reactive, onMounted } from "vue";
 import { useUiStore } from "@/stores/uiStore";
 import { useUserStore } from "@/stores/user";
 import { storeToRefs } from "pinia";
@@ -62,7 +62,7 @@ const uiStore = useUiStore();
 
 const userStore = useUserStore();
 
-const { userName } = storeToRefs(userStore)
+const { userName } = storeToRefs(userStore);
 
 onMounted(() => {
   uiStore.setCurrentPage("main-page");

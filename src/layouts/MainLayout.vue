@@ -35,13 +35,19 @@ const { currentPage } = storeToRefs(uiStore);
   background-size: 100%
 
   @media (max-width: 768px)
-    background: $main-bg-color url(@/assets/img/main-page-phone-bg.jpg) no-repeat fixed top
+    background: $main-bg-color url(@/assets/img/main-page-bg-phone.jpg) no-repeat fixed top
 .contacts
   background: $main-bg-color url(@/assets/img/contacts-bg.jpg) no-repeat fixed top
   background-size: 100%
+
+  @media (max-width: 768px)
+    background: $main-bg-color url(@/assets/img/contacts-bg-phone.jpg) no-repeat fixed top
 .dress-code
   background: $main-bg-color url(@/assets/img/dress-code-bg.jpg) no-repeat fixed top
   background-size: 100%
+
+  @media (max-width: 768px)
+    background: $main-bg-color url(@/assets/img/dress-code-bg-phone.jpg) no-repeat fixed center
 .gallery
   background: $main-bg-color url(@/assets/img/gallery-bg.jpg) no-repeat fixed top
   background-size: 100%
