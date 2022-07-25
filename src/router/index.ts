@@ -4,7 +4,7 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: "/:user(\\w)?",
+      path: "/",
       name: "mainLayout",
       component: () => import("@/layouts/MainLayout.vue"),
       children: [
