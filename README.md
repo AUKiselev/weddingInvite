@@ -1,6 +1,6 @@
-# priglashenie
+# Wedding invite
 
-This template should help get you started developing with Vue 3 in Vite.
+You can see it in http://mr-mrs-smith-wedding.ru
 
 ## Recommended IDE Setup
 
