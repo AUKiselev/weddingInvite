@@ -161,3 +161,8 @@ const CENTER_COORDS: [number, number] = [54.9823, 82.9471];
 .coordinator-info__phone
   color: inherit
 </style>
+
+<style lang="sass">
+.leaflet-control
+  visibility: hidden
+</style>
