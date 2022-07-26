@@ -1,16 +1,6 @@
 <template>
   <div class="main-header__wrapper">
-    <p
-      class="main-header__logo"
-      @click="
-        $router.push({
-          name: 'mainView',
-          params: { user: userStore.currentUser },
-        })
-      "
-    >
-      Максим и Зоя
-    </p>
+    <p class="main-header__logo">Максим и Зоя</p>
     <el-menu
       class="main-header__menu"
       mode="horizontal"
@@ -86,7 +76,6 @@ const activePath = () => {
   top: 25px
   left: 20px
   z-index: 5
-  cursor: pointer
 
   font-family: 'Exo2'
   line-height: 30px
@@ -94,9 +83,6 @@ const activePath = () => {
 
   @media (max-width: 768px)
     display: none
-
-  &:hover
-    border-bottom: 4px solid $white
 
 .main-header__menu
   border: none
