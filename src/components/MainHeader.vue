@@ -1,6 +1,14 @@
 <template>
   <div class="main-header__wrapper">
-    <p class="main-header__logo" @click="$router.push({ name: 'mainView' })">
+    <p
+      class="main-header__logo"
+      @click="
+        $router.push({
+          name: 'mainView',
+          params: { user: userStore.currentUser },
+        })
+      "
+    >
       Максим и Зоя
     </p>
     <el-menu
@@ -12,7 +20,7 @@
     >
       <el-menu-item
         index="/"
-        :route="{ name: 'mainView', id: userStore.currentUser && null }"
+        :route="{ name: 'mainView', params: { user: userStore.currentUser } }"
       >
         <template #title>
           <span>Главная</span>
@@ -21,7 +29,7 @@
 
       <el-menu-item
         index="/contacts"
-        :route="{ name: 'contacts', id: userStore.currentUser && null }"
+        :route="{ name: 'contacts', params: { user: userStore.currentUser } }"
       >
         <template #title>
           <span>Церемония</span>
@@ -30,7 +38,7 @@
 
       <el-menu-item
         index="/dress-code"
-        :route="{ name: 'dress-code', id: userStore.currentUser && null }"
+        :route="{ name: 'dress-code', params: { user: userStore.currentUser } }"
       >
         <template #title>
           <span>Дресс-код</span>
@@ -58,6 +66,12 @@ const userStore = useUserStore();
 const route = useRoute();
 
 const activePath = () => {
+  if (
+    !route.path.slice(1).includes("contacts") ||
+    !route.path.slice(1).includes("dress-code")
+  )
+    return "/";
+
   return `/${route.path.slice(1)}`;
 };
 </script>

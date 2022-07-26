@@ -38,7 +38,10 @@
         </el-form-item>
 
         <el-form-item>
-          <el-radio-group v-model="submitForm.withSomeone">
+          <el-radio-group
+            v-model="submitForm.withSomeone"
+            :disabled="!submitForm.presence"
+          >
             <el-radio :label="false">Буду один/одна</el-radio>
             <el-radio :label="true">Буду с парой</el-radio>
           </el-radio-group>
@@ -66,7 +69,6 @@ const { userName } = storeToRefs(userStore);
 
 onMounted(() => {
   uiStore.setCurrentPage("main-page");
-  userStore.setCurrentUser();
 });
 
 const submitForm = reactive({
