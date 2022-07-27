@@ -57,12 +57,13 @@ const route = useRoute();
 
 const activePath = () => {
   if (
-    !route.path.slice(1).includes("contacts") ||
-    !route.path.slice(1).includes("dress-code")
-  )
-    return "/";
+    route.path.slice(1).includes("contacts") ||
+    route.path.slice(1).includes("dress-code")
+  ) {
+    return `${route.path.slice(0, route.path.lastIndexOf("/"))}`;
+  }
 
-  return `/${route.path.slice(1)}`;
+  return "/";
 };
 </script>
 

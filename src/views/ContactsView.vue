@@ -23,8 +23,9 @@
         <div class="contacts-section__text-section">
           <p class="contacts-section__text-title hedline-2">Загс</p>
           <p class="contacts-section__text-content">
+            <span class="contacts-section__date">06.08.2022</span>
             <span class="contacts-section__address">
-              Красный пр-т., 68, Новосибирск 06.08.2022
+              Красный пр-т., 68, Новосибирск
             </span>
             <span class="contacts-section__text-event-time">
               15:50 - Официальная регистрация
@@ -35,8 +36,9 @@
         <div class="contacts-section__text-section">
           <p class="contacts-section__text-title hedline-2">Event House</p>
           <p class="contacts-section__text-content">
+            <span class="contacts-section__date">07.08.2022</span>
             <span class="contacts-section__address">
-              ул. Фёдора Горячева, 50, Новосибирск 07.08.2022
+              ул. Фёдора Горячева, 50, Новосибирск
             </span>
             <span class="contacts-section__text-event-time">
               15:30 - Сбор гостей
@@ -120,8 +122,11 @@ const CENTER_COORDS: [number, number] = [54.9823, 82.9471];
   flex-direction: column
   align-items: center
 
+.contacts-section__text-section
+  width: 100%
+
 .contacts-section__text-section + *
-  margin-top: 80px
+  margin-top: 60px
 
   @media (max-width: 768px)
     margin-top: 40px
@@ -134,7 +139,13 @@ const CENTER_COORDS: [number, number] = [54.9823, 82.9471];
   flex-direction: column
   align-items: start
 
+.contacts-section__date
+  align-self: center
+  margin-bottom: 15px
+  border-bottom: 2px solid $additional-element-color
+
 .contacts-section__address
+  align-self: center
   margin-bottom: 20px
   font-size: $fz24
 

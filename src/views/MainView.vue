@@ -26,37 +26,18 @@
     </p>
   </section>
 
-  <section class="main-page__invite-form-block main-page-section view-section">
-    <p class="headline-1">Подтвердите присутствие</p>
-    <el-form :model="submitForm">
-      <div class="invite-form-block__choice">
-        <el-form-item>
-          <el-radio-group v-model="submitForm.presence">
-            <el-radio :label="true">Обязательно приду!</el-radio>
-            <el-radio :label="false">К сожалению, не смогу быть :(</el-radio>
-          </el-radio-group>
-        </el-form-item>
-
-        <el-form-item>
-          <el-radio-group
-            v-model="submitForm.withSomeone"
-            :disabled="!submitForm.presence"
-          >
-            <el-radio :label="false">Буду один/одна</el-radio>
-            <el-radio :label="true">Буду с парой</el-radio>
-          </el-radio-group>
-        </el-form-item>
-      </div>
-
-      <el-form-item class="invite-form-block__submit">
-        <el-button>Отправить</el-button>
-      </el-form-item>
-    </el-form>
+  <section class="view-section">
+    <p
+      class="main-page-section__content main-page-footer__content view-section__content"
+    >
+      Убедительная просьба, если по каким-то причинам вы не сможете
+      присутствовать на нашем празднике, сообщить об этом до 30 июля!
+    </p>
   </section>
 </template>
 
 <script setup lang="ts">
-import { reactive, onMounted } from "vue";
+import { onMounted } from "vue";
 import { useUiStore } from "@/stores/uiStore";
 import { useUserStore } from "@/stores/user";
 import { storeToRefs } from "pinia";
@@ -70,11 +51,6 @@ const { userName } = storeToRefs(userStore);
 onMounted(() => {
   uiStore.setCurrentPage("main-page");
 });
-
-const submitForm = reactive({
-  presence: true,
-  withSomeone: undefined,
-});
 </script>
 
 <style lang="sass">
@@ -82,57 +58,6 @@ const submitForm = reactive({
   flex-direction: column
   max-width: 900px
 
-.el-form
-  min-width: 900px
-
-  @media (max-width: 768px)
-    min-width: 100%
-    width: 100%
-
-.invite-form-block__choice
-  display: flex
-  flex-direction: column
-  row-gap: 30px
-
-  @media (max-width: 768px)
-    margin: 0 0 0 50%
-    transform: translate(-50%)
-    align-items: start
-
-.el-form-item__content
-  justify-content: space-around
-
-.el-radio-group
-  column-gap: 20px
-
-  @media (max-width: 768px)
-    flex-direction: column
-    align-items: start
-
-.el-radio__label
-  font-size: $fz24
-  color: $additional-element-color
-
-.el-radio__input.is-checked+.el-radio__label
-  color: $additional-element-color
-
-.invite-form-block__submit
-  margin-top: 40px
-
-.el-button
-  padding: 20px
-  color: $additional-element-color
-  background-color: rgba(255, 255, 255, 0)
-
-  font-size: $fz20
-  font-weight: 600
-  text-transform: uppercase
-  letter-spacing: 1px
-  border: 3px solid $additional-element-color
-  transition: all .3s
-
-  &:hover, &:focus
-    color: $additional-element-color
-    background-color: $main-elements-hover-color
-    border-color: $border-color
+.main-page-footer__content
+  color: $main-elements-color
 </style>
