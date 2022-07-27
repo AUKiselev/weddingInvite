@@ -34,8 +34,25 @@ onMounted(() => {
   uiStore.setCurrentPage("gallery");
 });
 
+// const copyText = async () => {
+//   await navigator.clipboard.writeText(hashTag.value?.innerHTML);
+// };
+
 const copyText = async () => {
-  await navigator.clipboard.writeText(hashTag.value?.innerHTML);
+  if (navigator.clipboard && window.isSecureContext) {
+    return await navigator.clipboard.writeText(hashTag.value?.innerHTML);
+  } else {
+    const textArea = document.createElement("textarea");
+    textArea.value = hashTag.value?.innerHTML;
+    textArea.style.position = "fixed";
+    textArea.style.left = "-999999px";
+    textArea.style.top = "-999999px";
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    document.execCommand("copy");
+    textArea.remove();
+  }
 };
 </script>
 
