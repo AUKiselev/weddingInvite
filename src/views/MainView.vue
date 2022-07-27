@@ -26,10 +26,9 @@
     </p>
   </section>
 
-  <section class="view-section">
-    <p
-      class="main-page-section__content main-page-footer__content view-section__content"
-    >
+  <section class="main-page__invite-form-block main-page-section view-section">
+    <p class="headline-1">Подтвердите присутствие</p>
+    <p class="main-page-section__content view-section__content">
       Убедительная просьба, если по каким-то причинам вы не сможете
       присутствовать на нашем празднике, сообщить об этом до 30 июля!
     </p>
@@ -57,7 +56,4 @@ onMounted(() => {
 .main-page-section__content
   flex-direction: column
   max-width: 900px
-
-.main-page-footer__content
-  color: $main-elements-color
 </style>

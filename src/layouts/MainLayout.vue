@@ -49,8 +49,11 @@ const { currentPage } = storeToRefs(uiStore);
   @media (max-width: 768px)
     background: $main-bg-color url(@/assets/img/dress-code-bg-phone.jpg) no-repeat fixed center
 .gallery
-  background: $main-bg-color url(@/assets/img/gallery-bg.jpg) no-repeat fixed top
+  background: $main-bg-color url(@/assets/img/gallery-bg.jpg) no-repeat fixed center
   background-size: 100%
+
+  @media (max-width: 768px)
+    background: $main-bg-color url(@/assets/img/gallery-bg-phone.jpg) no-repeat fixed center
 
 .main-header__container
   padding: 0
@@ -63,6 +66,7 @@ const { currentPage } = storeToRefs(uiStore);
     padding: 20px
 
 .main-content__wrapper
+  min-height: calc(100vh - 80px)
   padding: 40px 0
   color: $additional-element-color
   background-color: rgba(0, 0, 0, 0.5)

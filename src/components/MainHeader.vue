@@ -35,14 +35,14 @@
         </template>
       </el-menu-item>
 
-      <!-- <el-menu-item
+      <el-menu-item
         index="/gallery"
-        :route="{ name: 'gallery', id: userStore.currentUser }"
+        :route="{ name: 'gallery', params: { user: userStore.currentUser } }"
       >
         <template #title>
           <span>Фотокнига</span>
         </template>
-      </el-menu-item> -->
+      </el-menu-item>
     </el-menu>
   </div>
 </template>
@@ -58,9 +58,12 @@ const route = useRoute();
 const activePath = () => {
   if (
     route.path.slice(1).includes("contacts") ||
-    route.path.slice(1).includes("dress-code")
+    route.path.slice(1).includes("dress-code") ||
+    route.path.slice(1).includes("gallery")
   ) {
-    return `${route.path.slice(0, route.path.lastIndexOf("/"))}`;
+    return userStore.currentUser
+      ? `${route.path.slice(0, route.path.lastIndexOf("/"))}`
+      : `${route.path}`;
   }
 
   return "/";
