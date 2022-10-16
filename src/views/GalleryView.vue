@@ -8,7 +8,7 @@
           id="photos__hashtag"
           class="photos__hashtag"
           ref="hashTag"
-          @click="copyText"
+          @click="copyText(), showCopyAcception()"
           >#KuznetsovsWedDay</span
         >
         это позволит нам насладиться фотографиями после торжества
@@ -16,10 +16,26 @@
     </div>
 
     <section class="gallery__photos view-section__content">
-      <p class="gallery__no-photos">
-        Скоро здесь появятся фотографии с торжества!
-      </p>
+      <a
+        href="https://cloud.mail.ru/public/QbJy/f9pqQ4X9C"
+        class="photos-link"
+        target="_blank"
+        >Фотографии с банкета</a
+      >
+      <a
+        href="https://cloud.mail.ru/public/wcTz/if3oqYNiw"
+        class="photos-link"
+        target="_blank"
+        >Фотографии с церемонии</a
+      >
     </section>
+
+    <p
+      class="copy-acceprion"
+      :class="{ 'show-acception': isShowCopyAcception }"
+    >
+      Хэштег скопирован
+    </p>
   </section>
 </template>
 <script setup lang="ts">
@@ -28,15 +44,12 @@ import { useUiStore } from "@/stores/uiStore";
 
 const uiStore = useUiStore();
 
-const hashTag = ref(null) as null | any;
+const hashTag = ref(null);
+const isShowCopyAcception = ref(false);
 
 onMounted(() => {
   uiStore.setCurrentPage("gallery");
 });
-
-// const copyText = async () => {
-//   await navigator.clipboard.writeText(hashTag.value?.innerHTML);
-// };
 
 const copyText = async () => {
   if (navigator.clipboard && window.isSecureContext) {
@@ -54,6 +67,15 @@ const copyText = async () => {
     textArea.remove();
   }
 };
+
+const showCopyAcception = () => {
+  if (!isShowCopyAcception.value) {
+    isShowCopyAcception.value = !isShowCopyAcception.value;
+    setTimeout(() => {
+      isShowCopyAcception.value = !isShowCopyAcception.value;
+    }, 1500);
+  }
+};
 </script>
 
 <style scoped lang="sass">
@@ -65,7 +87,38 @@ const copyText = async () => {
 .photos__hashtag
   font-size: $fz32
   color: $main-elements-color
+  cursor: pointer
 
-.gallery__no-photos
-  margin-top: 100px
+.gallery__photos
+  display: flex
+  flex-direction: column
+  margin-top: 50px
+
+.photos-link
+  padding: 15px 30px
+  color: $main-elements-hover-color
+  background-color: $additional-element-color
+  border-radius: 10px
+  text-decoration: none
+
+  &:hover
+    color: $border-color
+    text-decoration: underline
+
+.photos-link + .photos-link
+  margin-top: 40px
+
+.copy-acceprion
+  visibility: hidden
+  opacity: 0
+  position: absolute
+  bottom: 40px
+  padding: 15px 30px
+  background-color: rgba(185, 158, 163, .5)
+  border-radius: 8px
+  transition: opacity .3s
+
+  &.show-acception
+    visibility: visible
+    opacity: 1
 </style>
