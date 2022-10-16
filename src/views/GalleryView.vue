@@ -44,8 +44,8 @@ import { useUiStore } from "@/stores/uiStore";
 
 const uiStore = useUiStore();
 
-const hashTag = ref(null);
-const isShowCopyAcception = ref(false);
+const hashTag = ref(null) as null | any;
+const isShowCopyAcception = ref(false) as boolean | any;
 
 onMounted(() => {
   uiStore.setCurrentPage("gallery");
